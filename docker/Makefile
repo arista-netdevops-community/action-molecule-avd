@@ -1,7 +1,7 @@
 CURRENT_DIR = $(shell pwd)
-DOCKER_NAME ?= molecule-actions
-DOCKER_BASE ?= titom73
-DOCKER_TAG ?= latest
+DOCKER_NAME ?= action-molecule
+DOCKER_BASE ?= avdteam
+DOCKER_TAG ?= v1.0
 DOCKER_DIR ?= .
 
 .PHONY: help
@@ -20,3 +20,11 @@ run: ## run docker image
 exec: ## exec docker image
 	docker run --rm -it \
 		$(DOCKER_BASE)/$(DOCKER_NAME):$(DOCKER_TAG) ash
+
+.PHONY: connect
+connect: ## exec docker image
+	docker run --rm -it --entrypoint bash\
+		--env-file dev.env \
+		-v ${PWD}:/projects \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		$(DOCKER_BASE)/$(DOCKER_NAME):$(DOCKER_TAG)
