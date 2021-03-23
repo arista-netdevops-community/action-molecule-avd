@@ -66,6 +66,13 @@ inputs:
     required: false
     default: ''
 
+  ansible:
+    description: |
+      Ansible package to install
+      Support pip syntax to target specific version
+    required: false
+    default: 'ansible'
+
   check_git:
     description: |
       Check git status after molecule execution.

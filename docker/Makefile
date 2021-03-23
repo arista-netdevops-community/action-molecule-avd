@@ -19,7 +19,10 @@ run: ## run docker image
 .PHONY: exec
 exec: ## exec docker image
 	docker run --rm -it \
-		$(DOCKER_BASE)/$(DOCKER_NAME):$(DOCKER_TAG) ash
+		--env-file dev.env \
+		-v ${PWD}:/projects \
+		-v /var/run/docker.sock:/var/run/docker.sock \
+		$(DOCKER_BASE)/$(DOCKER_NAME):$(DOCKER_TAG)
 
 .PHONY: connect
 connect: ## exec docker image

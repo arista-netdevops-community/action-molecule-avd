@@ -3,7 +3,7 @@
 # Purpose: Molecule runner for github-action
 # Author: @titom73
 # Date: 2020-12-16
-# Version: 1.0
+# Version: 1.1
 # License: APACHE
 # --------------------------------------
 
@@ -11,17 +11,16 @@
 # export PATH=$(echo "$PATH" | sed -e 's/:\/home\/avd\/.local\/bin//')
 echo "Script running from ${PWD}"
 
+# Install Ansible package
+echo 'installing specific ansible version +'${INPUT_ANSIBLE}+' ...'
+pip install ${INPUT_ANSIBLE}
+
 # If user define any requirements file in options, we install them
 if [ ${INPUT_PIP_FILE} != '' ] 2> /dev/null && [ -f ${INPUT_PIP_FILE} ]; then
     echo 'installing custom requirements file ...'
     echo 'PIP file is set to : '${INPUT_PIP_FILE}
     # Workaround for https://github.com/ansible/ansible/issues/70348
     pip install --upgrade -r ${INPUT_PIP_FILE}
-    if grep -Fxq 'ansible' "${INPUT_PIP_FILE}"; then
-        pip install --upgrade --yes ansible
-    fi
-else
-    pip install --upgrade ansible
 fi
 
 export MOLECULE_BIN=$(which molecule)
