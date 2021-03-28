@@ -12,8 +12,10 @@
 echo "Script running from ${PWD}"
 
 # Install Ansible package
-echo 'installing specific ansible version +'${INPUT_ANSIBLE}+' ...'
-pip install ${INPUT_ANSIBLE}
+if [ ${INPUT_ANSIBLE} =~ 'ansible.*' ] 2> /dev/null; then
+    echo 'installing specific ansible version +'${INPUT_ANSIBLE}+' ...'
+    pip install ${INPUT_ANSIBLE}
+fi
 
 # If user define any requirements file in options, we install them
 if [ ${INPUT_PIP_FILE} != '' ] 2> /dev/null && [ -f ${INPUT_PIP_FILE} ]; then
@@ -28,6 +30,12 @@ export MOLECULE_BIN=$(which molecule)
 # Set default value for where to find MOLECULE folder
 cd ${INPUT_MOLECULE_PARENTDIR}
 echo "Current working dir: $PWD"
+
+# Test if ansible is available
+if ! [ -x "$(command -v ansible)" ]; then
+    echo "Ansible not found !"
+    exit 1
+fi
 
 # Run Molecule scenario
 echo "Running: molecule ${INPUT_MOLECULE_OPTIONS} ${INPUT_MOLECULE_COMMAND} ${INPUT_MOLECULE_ARGS}"
