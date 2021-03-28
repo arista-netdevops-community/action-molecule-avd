@@ -65,6 +65,13 @@ In addition, this GH action supports GIT status after Molecule execution to help
       any requirements prior to run molecule
     required: false
 
+  ansible:
+    description: |
+      Ansible package to install
+      Support pip syntax to target specific version
+    required: false
+    default: 'ansible'
+
   check_git:
     description: |
       Check git status after molecule execution.
@@ -98,6 +105,7 @@ jobs:
           molecule_parentdir: 'ansible_collections/arista/cvp'
           molecule_command: 'test'
           molecule_args: '--all'
+          ansible: ansible>=2.10
           pip_file: 'requirements.txt'
           check_git: true
           check_git_enforced: false

@@ -3,7 +3,7 @@
 # Purpose: Molecule runner for github-action
 # Author: @titom73
 # Date: 2020-12-16
-# Version: 1.0
+# Version: 1.1
 # License: APACHE
 # --------------------------------------
 
@@ -11,17 +11,18 @@
 # export PATH=$(echo "$PATH" | sed -e 's/:\/home\/avd\/.local\/bin//')
 echo "Script running from ${PWD}"
 
+# Install Ansible package
+if [ ${INPUT_ANSIBLE} =~ 'ansible.*' ] 2> /dev/null; then
+    echo 'installing specific ansible version +'${INPUT_ANSIBLE}+' ...'
+    pip install ${INPUT_ANSIBLE}
+fi
+
 # If user define any requirements file in options, we install them
 if [ ${INPUT_PIP_FILE} != '' ] 2> /dev/null && [ -f ${INPUT_PIP_FILE} ]; then
     echo 'installing custom requirements file ...'
     echo 'PIP file is set to : '${INPUT_PIP_FILE}
     # Workaround for https://github.com/ansible/ansible/issues/70348
     pip install --upgrade -r ${INPUT_PIP_FILE}
-    if grep -Fxq 'ansible' "${INPUT_PIP_FILE}"; then
-        pip install --upgrade --yes ansible
-    fi
-else
-    pip install --upgrade ansible
 fi
 
 export MOLECULE_BIN=$(which molecule)
@@ -29,6 +30,12 @@ export MOLECULE_BIN=$(which molecule)
 # Set default value for where to find MOLECULE folder
 cd ${INPUT_MOLECULE_PARENTDIR}
 echo "Current working dir: $PWD"
+
+# Test if ansible is available
+if ! [ -x "$(command -v ansible)" ]; then
+    echo "Ansible not found !"
+    exit 1
+fi
 
 # Run Molecule scenario
 echo "Running: molecule ${INPUT_MOLECULE_OPTIONS} ${INPUT_MOLECULE_COMMAND} ${INPUT_MOLECULE_ARGS}"
