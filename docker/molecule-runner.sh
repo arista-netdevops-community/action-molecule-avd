@@ -13,8 +13,11 @@ echo "Script running from ${PWD}"
 
 # Install Ansible package
 if [ ${INPUT_ANSIBLE} =~ 'ansible.*' ] 2> /dev/null; then
-    echo 'installing specific ansible version +'${INPUT_ANSIBLE}+' ...'
+    echo 'installing specific ansible version '${INPUT_ANSIBLE}+' ...'
     pip install ${INPUT_ANSIBLE}
+else
+    echo 'installing latest ansible version ...'
+    pip install ansible
 fi
 
 # If user define any requirements file in options, we install them
@@ -41,6 +44,12 @@ fi
 echo "Running: molecule ${INPUT_MOLECULE_OPTIONS} ${INPUT_MOLECULE_COMMAND} ${INPUT_MOLECULE_ARGS}"
 ${MOLECULE_BIN} --version
 ${MOLECULE_BIN} ${INPUT_MOLECULE_OPTIONS} ${INPUT_MOLECULE_COMMAND} ${INPUT_MOLECULE_ARGS}
+export MOLECULE_STATE=$?
+
+if [ ${MOLECULE_STATE} -eq 1 ]; then
+    echo "Molecule failed! Exiting action with error code "${MOLECULE_STATE}
+    exit ${MOLECULE_STATE}
+fi
 
 if [ ${INPUT_CHECK_GIT} = "true" ]; then
     git config core.fileMode false
