@@ -88,4 +88,4 @@ inputs:
 
 runs:
   using: docker
-  image: docker://avdteam/action-molecule:dev
+  image: docker://avdteam/action-molecule:latest
