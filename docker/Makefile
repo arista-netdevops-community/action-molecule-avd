@@ -1,7 +1,7 @@
 CURRENT_DIR = $(shell pwd)
 DOCKER_NAME ?= action-molecule
 DOCKER_BASE ?= avdteam
-DOCKER_TAG ?= v1.0
+DOCKER_TAG ?= dev
 DOCKER_DIR ?= .
 
 .PHONY: help
