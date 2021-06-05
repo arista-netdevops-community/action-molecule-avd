@@ -3,3 +3,4 @@
 .ansible*
 .cache
 requirements.txt
+.pytest_cache
