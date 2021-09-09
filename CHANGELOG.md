@@ -1,4 +1,8 @@
-## v1.1-8-gc1c3920
+## v1.1-10-ge9cd321
+
+### Features
+
+ - [`e9cd321`](https://github.com/aristanetworks/ansible-avd/commit/e9cd321) [Feat]       Update to python3.8 and add galaxy_file argument ([#7](https://github.com/aristanetworks/ansible-avd/issues/7))
 
 ### Bug fixes
 
