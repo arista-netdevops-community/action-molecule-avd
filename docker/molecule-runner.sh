@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Purpose: Molecule runner for github-action
 # Author: @titom73
@@ -12,7 +12,9 @@
 echo "Script running from ${PWD}"
 
 # Install Ansible package
-if [ ${INPUT_ANSIBLE} =~ 'ansible.*' ] 2> /dev/null; then
+echo "container should run with following ansible input: ${INPUT_ANSIBLE}"
+ansible_pattern="^ansible*"
+if [[ $INPUT_ANSIBLE =~ $ansible_pattern ]]; then
     echo 'installing specific ansible version '${INPUT_ANSIBLE}+' ...'
     pip install ${INPUT_ANSIBLE}
 else
