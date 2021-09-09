@@ -1,0 +1,28 @@
+name: "Changelog builder"
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v*
+
+jobs:
+  changelog:
+    name: Build changelog
+    runs-on: ubuntu-20.04
+    container: avdteam/base:3.6-edge
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: |
+          zsh zsh .github/changelog.sh master $(git rev-list --max-parents=0 HEAD)
+          zsh zsh .github/changelog.sh master $(git rev-list --max-parents=0 HEAD) md > CHANGELOG.md
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: AVD Bot
+          author_email: ansible@arista.com
+          message: 'AUTO-BUILD: Update Changelog'
+          add: 'CHANGELOG.md'
