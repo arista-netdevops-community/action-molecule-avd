@@ -66,7 +66,14 @@ inputs:
     required: false
     default: ''
 
-  ansible:
+  galaxy_file:
+    description: |
+      Relative path from `${GITHUB_REPOSITORY}` to install
+      any requirements from Ansible Galaxy prior to run molecule
+    required: false
+    default: ''
+
+    ansible:
     description: |
       Ansible package to install
       Support pip syntax to target specific version
