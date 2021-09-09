@@ -72,6 +72,13 @@ In addition, this GH action supports GIT status after Molecule execution to help
     required: false
     default: 'ansible'
 
+  galaxy_file:
+    description: |
+      Relative path from `${GITHUB_REPOSITORY}` to install
+      any requirements from Ansible Galaxy prior to run molecule
+    required: false
+    default: ''
+
   check_git:
     description: |
       Check git status after molecule execution.
