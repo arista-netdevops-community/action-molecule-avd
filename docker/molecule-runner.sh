@@ -30,6 +30,13 @@ if [ ${INPUT_PIP_FILE} != '' ] 2> /dev/null && [ -f ${INPUT_PIP_FILE} ]; then
     pip install --upgrade -r ${INPUT_PIP_FILE}
 fi
 
+# If user define any galaxy requirements file in options, we install them
+if [ ${INPUT_GALAXY_FILE} != '' ] 2> /dev/null && [ -f ${INPUT_GALAXY_FILE} ]; then
+    echo 'installing custom Galaxy requirements file ...'
+    echo 'Galaxy file is set to : '${INPUT_GALAXY_FILE}
+    ansible-galaxy install -r ${INPUT_GALAXY_FILE}
+fi
+
 export MOLECULE_BIN=$(which molecule)
 
 # Set default value for where to find MOLECULE folder
