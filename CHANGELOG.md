@@ -1,4 +1,4 @@
-## v1.1-10-ge9cd321
+## v1.1-12-gb3d1d5e
 
 ### Features
 
@@ -6,6 +6,7 @@
 
 ### Bug fixes
 
+ - [`b3d1d5e`](https://github.com/aristanetworks/ansible-avd/commit/b3d1d5e) [Fix]        Restore proper spacing in action.yml ([#9](https://github.com/aristanetworks/ansible-avd/issues/9))
  - [`9911181`](https://github.com/aristanetworks/ansible-avd/commit/9911181) [entrypoint] Update entrypoint shell to support regex match ([#6](https://github.com/aristanetworks/ansible-avd/issues/6))
 
 ### Other changes
