@@ -73,7 +73,7 @@ inputs:
     required: false
     default: ''
 
-    ansible:
+  ansible:
     description: |
       Ansible package to install
       Support pip syntax to target specific version
