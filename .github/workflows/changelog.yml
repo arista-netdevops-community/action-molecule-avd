@@ -17,8 +17,8 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-          zsh zsh .github/changelog.sh master $(git rev-list --max-parents=0 HEAD)
-          zsh zsh .github/changelog.sh master $(git rev-list --max-parents=0 HEAD) md > CHANGELOG.md
+          zsh .github/changelog.sh master $(git rev-list --max-parents=0 HEAD)
+          zsh .github/changelog.sh master $(git rev-list --max-parents=0 HEAD) md > CHANGELOG.md
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
