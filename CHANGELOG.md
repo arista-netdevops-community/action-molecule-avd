@@ -1,4 +1,4 @@
-## v1.1-12-gb3d1d5e
+## v1.1-14-g4637860
 
 ### Features
 
@@ -8,6 +8,10 @@
 
  - [`b3d1d5e`](https://github.com/aristanetworks/ansible-avd/commit/b3d1d5e) [Fix]        Restore proper spacing in action.yml ([#9](https://github.com/aristanetworks/ansible-avd/issues/9))
  - [`9911181`](https://github.com/aristanetworks/ansible-avd/commit/9911181) [entrypoint] Update entrypoint shell to support regex match ([#6](https://github.com/aristanetworks/ansible-avd/issues/6))
+
+### Documentation
+
+ - [`4637860`](https://github.com/aristanetworks/ansible-avd/commit/4637860) [Doc]        Update README with galaxy_file knob ([#10](https://github.com/aristanetworks/ansible-avd/issues/10))
 
 ### Other changes
 
