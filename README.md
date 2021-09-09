@@ -1,4 +1,4 @@
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/arista-netdevops-community/action-molecule-avd) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/avdteam/action-molecule) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/avdteam/action-molecule) ![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/avdteam/action-molecule) ![Docker Pulls](https://img.shields.io/docker/pulls/avdteam/action-molecule) ![GitHub](https://img.shields.io/github/license/arista-netdevops-community/action-molecule-avd)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/arista-netdevops-community/action-molecule-avd) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/avdteam/action-molecule) ![Docker Pulls](https://img.shields.io/docker/pulls/avdteam/action-molecule) ![GitHub](https://img.shields.io/github/license/arista-netdevops-community/action-molecule-avd)
 
 # Github  Action for Molecule
 
