@@ -55,7 +55,7 @@ ${MOLECULE_BIN} --version
 ${MOLECULE_BIN} ${INPUT_MOLECULE_OPTIONS} ${INPUT_MOLECULE_COMMAND} ${INPUT_MOLECULE_ARGS}
 export MOLECULE_STATE=$?
 
-if [ ${MOLECULE_STATE} -eq 1 ]; then
+if [ ${MOLECULE_STATE} -ne 0 ]; then
     echo "Molecule failed! Exiting action with error code "${MOLECULE_STATE}
     exit ${MOLECULE_STATE}
 fi
