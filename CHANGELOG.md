@@ -35,20 +35,9 @@
 
 ## v1.2
 
-### Features
-
- - Use latest stable docker image
-
 ### Bug fixes
 
- - Update entrypoint shell to support regex match ([#6](https://github.com/arista-netdevops-community/action-molecule-avd/issues/6))
-
-### Other changes
-
-- Build system: Add changelog builder
-- Build system: Build docker image with GH actions
-- Build system: Update build context
-- Build system: Update docker tag builder
+- Update entrypoint shell to support regex match ([#6](https://github.com/arista-netdevops-community/action-molecule-avd/issues/6))
 
 ## v1.1
 
