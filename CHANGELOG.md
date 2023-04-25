@@ -1,36 +1,49 @@
-## v1.4-3-g301c81e
+# Changelog for action-molecule-avd
+
+## v1.5
+
+- Bump: Update docker by @carlbuchmann in https://github.com/arista-netdevops-community/action-molecule-avd/pull/13
 
 ## v1.4
+
+### Bug fixes
+
+- Fix: Fail on all error codes by @carlbuchmann in https://github.com/arista-netdevops-community/action-molecule-avd/pull/12
 
 ## v1.3
 
 ### Features
 
- - [`e9cd321`](https://github.com/aristanetworks/ansible-avd/commit/e9cd321) [Feat]       Update to python3.8 and add galaxy_file argument ([#7](https://github.com/aristanetworks/ansible-avd/issues/7))
+ - Update to python3.8 and add galaxy_file argument ([#7](https://github.com/arista-netdevops-community/action-molecule-avd/issues/7))
 
 ### Bug fixes
 
- - [`b3d1d5e`](https://github.com/aristanetworks/ansible-avd/commit/b3d1d5e) [Fix]        Restore proper spacing in action.yml ([#9](https://github.com/aristanetworks/ansible-avd/issues/9))
+ -  Restore proper spacing in action.yml ([#9](https://github.com/arista-netdevops-community/action-molecule-avd/issues/9))
+ - Update entrypoint shell to support regex match ([#6](https://github.com/arista-netdevops-community/action-molecule-avd/issues/6))
 
 ### Documentation
 
- - [`4637860`](https://github.com/aristanetworks/ansible-avd/commit/4637860) [Doc]        Update README with galaxy_file knob ([#10](https://github.com/aristanetworks/ansible-avd/issues/10))
+ - Update README with galaxy_file knob ([#10](https://github.com/arista-netdevops-community/action-molecule-avd/issues/10))
 
 ### Other changes
 
- - [`10847fd`](https://github.com/aristanetworks/ansible-avd/commit/10847fd) [Make]       Build system: Add changelog builder
- - [`278f483`](https://github.com/aristanetworks/ansible-avd/commit/278f483) [Make]       Build system: Build docker image with GH actions
- - [`b43cbf4`](https://github.com/aristanetworks/ansible-avd/commit/b43cbf4) [Make]       Build system: Update build context
- - [`cfcc6e3`](https://github.com/aristanetworks/ansible-avd/commit/cfcc6e3) [Make]       Build system: Update docker tag builder
- - [`c1c3920`](https://github.com/aristanetworks/ansible-avd/commit/c1c3920) [github]     Build system: Add PR linter for conventional commits ([#8](https://github.com/aristanetworks/ansible-avd/issues/8))
+- Build system: Add changelog builder
+- Build system: Build docker image with GH actions
+- Build system: Update build context
+- Build system: Update docker tag builder
+- Build system: Add PR linter for conventional commits ([#8](https://github.com/arista-netdevops-community/action-molecule-avd/issues/8))
 
 ## v1.2
 
 ### Bug fixes
 
- - [`9911181`](https://github.com/aristanetworks/ansible-avd/commit/9911181) [entrypoint] Update entrypoint shell to support regex match ([#6](https://github.com/aristanetworks/ansible-avd/issues/6))
+- Update entrypoint shell to support regex match ([#6](https://github.com/arista-netdevops-community/action-molecule-avd/issues/6))
 
 ## v1.1
 
+- Add option to select version of Ansible outside of requirements
+- Add test to validate Ansible is installed
+
 ## v1.0
 
+- Initial Release
