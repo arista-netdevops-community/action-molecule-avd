@@ -65,7 +65,7 @@ if [ ${INPUT_CHECK_GIT} = "true" ]; then
     echo "  * Run Git Verifier because CHECK_GIT is set to ${INPUT_CHECK_GIT}"
     # if git diff-index --quiet HEAD --; then
     if [ -n "$(git status --porcelain)" ]; then
-        # No changes
+        # Some changes
         echo 'Some changes'
         echo '------------'
         git --no-pager status --short
@@ -79,6 +79,11 @@ if [ ${INPUT_CHECK_GIT} = "true" ]; then
             exit 0
         fi
     else
+        e=$?
+        if [ "${e}" -ne "0" ]; then
+            echo "'git status --porcelain' failed to run - something is wrong"
+            exit $e
+        fi
         # No Changes
         echo '    - No change found after running Molecule'
         exit 0
