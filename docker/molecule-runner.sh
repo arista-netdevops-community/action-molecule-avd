@@ -10,6 +10,7 @@
 
 # export PATH=$(echo "$PATH" | sed -e 's/:\/home\/avd\/.local\/bin//')
 echo "Script running from ${PWD}"
+git config --global --add safe.directory ${PWD}
 
 # Install Ansible package
 echo "container should run with following ansible input: ${INPUT_ANSIBLE}"
@@ -64,7 +65,12 @@ if [ ${INPUT_CHECK_GIT} = "true" ]; then
     git config core.fileMode false
     echo "  * Run Git Verifier because CHECK_GIT is set to ${INPUT_CHECK_GIT}"
     # if git diff-index --quiet HEAD --; then
-    if [ -n "$(git status --porcelain)" ]; then
+    GIT_STATUS="$(git status --porcelain)"
+    if  [ "$?" -ne "0" ]; then
+        echo "'git status --porcelain' failed to run - something is wrong"
+        exit 1
+    fi
+    if [ -n "$GIT_STATUS" ]; then
         # Some changes
         echo 'Some changes'
         echo '------------'
@@ -79,11 +85,6 @@ if [ ${INPUT_CHECK_GIT} = "true" ]; then
             exit 0
         fi
     else
-        e=$?
-        if [ "${e}" -ne "0" ]; then
-            echo "'git status --porcelain' failed to run - something is wrong"
-            exit $e
-        fi
         # No Changes
         echo '    - No change found after running Molecule'
         exit 0
