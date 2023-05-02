@@ -12,7 +12,9 @@ LABEL "com.github.actions.color"="green"
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential wget git curl rsync && \
     curl -fsSL https://get.docker.com | sh
-RUN pip install --upgrade pip molecule "molecule-plugins[docker]"
+# Workaround
+# https://github.com/ansible-community/molecule/pull/3904
+RUN pip install --upgrade pip molecule "molecule-plugins[docker]" "ansible-compat<4.0.1"
 ADD molecule-runner.sh /bin/molecule-runner.sh
 
 WORKDIR /projects

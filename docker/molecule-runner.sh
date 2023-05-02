@@ -29,9 +29,6 @@ if [ ${INPUT_PIP_FILE} != '' ] 2> /dev/null && [ -f ${INPUT_PIP_FILE} ]; then
     echo 'PIP file is set to : '${INPUT_PIP_FILE}
     # Workaround for https://github.com/ansible/ansible/issues/70348
     pip install --upgrade -r ${INPUT_PIP_FILE}
-    # Workaround
-    # https://github.com/ansible-community/molecule/pull/3904
-    pip install ansible-compat<4.0.1
 fi
 
 # If user define any galaxy requirements file in options, we install them
