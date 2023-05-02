@@ -1,5 +1,9 @@
 # Changelog for action-molecule-avd
 
+## v1.6
+
+- Fix: Catch git error and consider /github/workspace as safe by @gmuloc in https://github.com/arista-netdevops-community/action-molecule-avd/pull/15
+
 ## v1.5
 
 - Bump: Update docker by @carlbuchmann in https://github.com/arista-netdevops-community/action-molecule-avd/pull/13
