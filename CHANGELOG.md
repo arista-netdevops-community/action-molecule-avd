@@ -1,5 +1,10 @@
 # Changelog for action-molecule-avd
 
+## v1.7
+
+- Fix: Docker stable file & context by @carlbuchmann in https://github.com/arista-netdevops-community/action-molecule-avd/pull/21
+- Bump: Python base image and Molecule 6.x by @ClausHolbechArista in https://github.com/arista-netdevops-community/action-molecule-avd/pull/22
+
 ## v1.6
 
 - Fix: Catch git error and consider /github/workspace as safe by @gmuloc in https://github.com/arista-netdevops-community/action-molecule-avd/pull/15
