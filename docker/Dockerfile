@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 LABEL "maintainer"="Ansible Team <ansible@arista.com>"
 LABEL "repository"="https://github.com/arista-netdevops-community/action-molecule-avd"
@@ -14,7 +14,7 @@ RUN apt-get update && \
     curl -fsSL https://get.docker.com | sh
 # Workaround
 # https://github.com/ansible-community/molecule/pull/3904
-RUN pip install --upgrade pip molecule "molecule-plugins[docker]" "ansible-compat<4.0.1"
+RUN pip install --upgrade pip molecule "molecule-plugins[docker]"
 ADD molecule-runner.sh /bin/molecule-runner.sh
 
 WORKDIR /projects
