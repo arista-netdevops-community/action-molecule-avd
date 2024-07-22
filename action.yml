@@ -95,4 +95,4 @@ inputs:
 
 runs:
   using: docker
-  image: docker://avdteam/action-molecule:latest
+  image: ghcr.io/arista-netdevops-community/action-molecule-avd/action-molecule:v1.7

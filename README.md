@@ -1,4 +1,4 @@
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/arista-netdevops-community/action-molecule-avd) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/avdteam/action-molecule) ![Docker Pulls](https://img.shields.io/docker/pulls/avdteam/action-molecule) ![GitHub](https://img.shields.io/github/license/arista-netdevops-community/action-molecule-avd)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/arista-netdevops-community/action-molecule-avd) ![GitHub](https://img.shields.io/github/license/arista-netdevops-community/action-molecule-avd)
 
 # Github  Action for Molecule
 
@@ -137,5 +137,5 @@ docker run --rm -it \
     -v ${PWD}:/root/ \                              # Local content shared with container
     -v /var/run/docker.sock:/var/run/docker.sock \  # Docker process required by molecule
     --env-file dev.env \                            # File with your variables
-    avdteam/action-molecule:v1.0
+    ghcr.io/arista-netdevops-community/action-molecule-avd/action-molecule:v1.7
 ```
