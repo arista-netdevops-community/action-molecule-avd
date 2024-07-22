@@ -137,5 +137,5 @@ docker run --rm -it \
     -v ${PWD}:/root/ \                              # Local content shared with container
     -v /var/run/docker.sock:/var/run/docker.sock \  # Docker process required by molecule
     --env-file dev.env \                            # File with your variables
-    ghcr.io/arista-netdevops-community/action-molecule-avd/action-molecule:v1.7
+    ghcr.io/arista-netdevops-community/action-molecule-avd/action-molecule:v1.8
 ```
