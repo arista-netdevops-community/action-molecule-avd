@@ -4,7 +4,7 @@
 
 - Feat: move action-molecule container to GHRC by @ankudinov in https://github.com/arista-netdevops-community/action-molecule-avd/pull/24
 - Feat: Switch to ghrc container by @ankudinov in https://github.com/arista-netdevops-community/action-molecule-avd/pull/25
-- Fix: fix container tag by @ankudinov in https://github.com/arista-netdevops-community/action-molecule-avd/pull/27
+- Fix: fix container tag from 1.7 to 1.8 by @ankudinov in https://github.com/arista-netdevops-community/action-molecule-avd/pull/27
 
 ## v1.7
 
