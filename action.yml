@@ -95,4 +95,4 @@ inputs:
 
 runs:
   using: docker
-  image: ghcr.io/arista-netdevops-community/action-molecule-avd/action-molecule:v1.8
+  image: docker://ghcr.io/arista-netdevops-community/action-molecule-avd/action-molecule:v1.8.1

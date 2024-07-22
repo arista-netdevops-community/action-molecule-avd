@@ -1,5 +1,9 @@
 # Changelog for action-molecule-avd
 
+## v1.8.1
+
+- Feat: fix action container image syntax by @ankudinov in https://github.com/arista-netdevops-community/action-molecule-avd/pull/29
+
 ## v1.8
 
 - Feat: move action-molecule container to GHRC by @ankudinov in https://github.com/arista-netdevops-community/action-molecule-avd/pull/24

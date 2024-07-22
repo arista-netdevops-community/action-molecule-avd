@@ -3,7 +3,7 @@ name: "Changelog builder"
 on:
   push:
     branches:
-      - master
+      # - master
       - releases/*
 
 jobs:
