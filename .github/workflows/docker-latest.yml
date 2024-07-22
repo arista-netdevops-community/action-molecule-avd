@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - 'master'
+      - '**'
   repository_dispatch:
     types:
       - refresh
@@ -42,7 +43,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ secrets.DOCKERHUB_IMAGE }}
+          images: ghcr.io/${{ github.repository }}/action-molecule
           tags: |
             type=match,pattern=(v.*),group=1
 
