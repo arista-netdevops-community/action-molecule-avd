@@ -23,16 +23,16 @@
 
 ### Features
 
- - Update to python3.8 and add galaxy_file argument ([#7](https://github.com/arista-netdevops-community/action-molecule-avd/issues/7))
+- Update to python3.8 and add galaxy_file argument ([#7](https://github.com/arista-netdevops-community/action-molecule-avd/issues/7))
 
 ### Bug fixes
 
- -  Restore proper spacing in action.yml ([#9](https://github.com/arista-netdevops-community/action-molecule-avd/issues/9))
- - Update entrypoint shell to support regex match ([#6](https://github.com/arista-netdevops-community/action-molecule-avd/issues/6))
+- Restore proper spacing in action.yml ([#9](https://github.com/arista-netdevops-community/action-molecule-avd/issues/9))
+- Update entrypoint shell to support regex match ([#6](https://github.com/arista-netdevops-community/action-molecule-avd/issues/6))
 
 ### Documentation
 
- - Update README with galaxy_file knob ([#10](https://github.com/arista-netdevops-community/action-molecule-avd/issues/10))
+- Update README with galaxy_file knob ([#10](https://github.com/arista-netdevops-community/action-molecule-avd/issues/10))
 
 ### Other changes
 
